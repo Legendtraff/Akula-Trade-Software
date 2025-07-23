@@ -1,0 +1,75 @@
+/* Основные стили как в Binarium */
+body {
+    margin: 0;
+    background: #0e1a2b;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.binarium-header {
+    background: #0a121f;
+    padding: 8px 15px;
+    border-bottom: 1px solid #1e2a3a;
+}
+
+.pair-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.current-pair {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #1a2639;
+}
+
+.pair-name {
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.timeframe {
+    color: #8a9bba;
+    font-size: 14px;
+}
+
+.accuracy {
+    color: #089981;
+    font-weight: bold;
+}
+
+.pair-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a2639;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 100;
+    min-width: 120px;
+}
+
+.pair-option {
+    padding: 8px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #2a3a4d;
+}
+
+.pair-option:hover {
+    background: #2a3a4d;
+}
+
+.pair-option.active {
+    color: #089981;
+    font-weight: bold;
+}
+
+/* Показываем dropdown при клике */
+.pair-selector:hover .pair-dropdown {
+    display: block;
+}
