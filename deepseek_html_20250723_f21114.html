@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pure TradingView</title>
+    <style>
+        body { 
+            margin: 0;
+            background: #0e1a2b;
+            overflow: hidden;
+        }
+        #chart {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        // Ждем полной загрузки API
+        function initChart() {
+            new TradingView.widget({
+                "autosize": true,
+                "symbol": "BINANCE:BTCUSDT",
+                "interval": "1",
+                "timezone": "Etc/UTC",
+                "theme": "dark",
+                "style": "1",
+                "container_id": "chart",
+                "hide_top_toolbar": true,
+                "hide_side_toolbar": true,
+                "hide_legend": true,
+                "disabled_features": [
+                    "header_widget", 
+                    "left_toolbar",
+                    "timeframes_toolbar"
+                ],
+                "overrides": {
+                    "paneProperties.background": "#0e1a2b",
+                    "paneProperties.vertGridProperties.color": "rgba(0,0,0,0)",
+                    "paneProperties.horzGridProperties.color": "rgba(0,0,0,0)",
+                    "mainSeriesProperties.candleStyle.upColor": "#089981",
+                    "mainSeriesProperties.candleStyle.downColor": "#f23645"
+                }
+            });
+        }
+
+        // Запуск после полной загрузки страницы
+        window.addEventListener('load', initChart);
+    </script>
+</body>
+</html>
